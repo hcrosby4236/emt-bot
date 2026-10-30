@@ -1,0 +1,15 @@
+{
+  "name": "emt-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test --test-isolation=none"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.27.0"
+  }
+}

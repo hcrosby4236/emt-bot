@@ -1,0 +1,489 @@
+[
+  {
+    "id": "external-bleeding",
+    "title": "Arm injury",
+    "topics": [
+      "primary",
+      "trauma"
+    ],
+    "dispatch": "Respond to an adult cut by broken glass in a workshop.",
+    "presentation": "A 34-year-old is seated beside a broken window, holding a bleeding forearm. A partner and bleeding-control supplies are available.",
+    "findings": {
+      "responsiveness": "Alert, anxious, and lightheaded.",
+      "airway": "Patent; the patient speaks clearly.",
+      "breathing": "Breathing spontaneously; chest movement is adequate.",
+      "circulation": "Blood flows rapidly from a deep forearm wound. Skin is pale and clammy; the radial pulse is rapid and weak.",
+      "vitals": "Authored initial values: pulse 124/min; respirations 24/min; BP 92/60 mmHg. These values do not update automatically.",
+      "history": "The injury happened minutes ago. The patient reports dizziness; further history is not specified.",
+      "secondary": "Deep forearm laceration; no embedded object or other major wound is found in this case."
+    },
+    "goals": [
+      {
+        "label": "Assess responsiveness",
+        "anyOf": [
+          "responsiveness",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess airway",
+        "anyOf": [
+          "airway",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess breathing",
+        "anyOf": [
+          "breathing",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess circulation",
+        "anyOf": [
+          "circulation",
+          "primary"
+        ]
+      },
+      {
+        "label": "Arrange transport",
+        "anyOf": [
+          "transport"
+        ]
+      },
+      {
+        "label": "Reassess after care",
+        "anyOf": [
+          "reassess"
+        ],
+        "afterAny": [
+          "pressure",
+          "tourniquet",
+          "oxygen",
+          "airwaySupport",
+          "ventilation",
+          "spine",
+          "transport"
+        ]
+      },
+      {
+        "label": "Escalate persistent major limb bleeding control",
+        "anyOf": [
+          "tourniquet"
+        ]
+      }
+    ],
+    "effects": {
+      "pressure": {
+        "text": "In this case, firm direct pressure slows the bleeding, but it continues. Your partner has a tourniquet ready."
+      },
+      "tourniquet": {
+        "text": "Authored outcome after correct application: external bleeding stops. The patient remains pale; reassess circulation.",
+        "setFindings": {
+          "circulation": "External bleeding is controlled. Skin remains pale and clammy; the pulse remains rapid and weak."
+        }
+      }
+    },
+    "delay": {
+      "text": "After the delay, the patient is more confused and the bleeding continues unless already controlled.",
+      "setFindings": {
+        "responsiveness": "The patient is confused after the delay."
+      }
+    },
+    "review": "Control major bleeding promptly. Persistent poor perfusion still requires ongoing assessment and timely transport.",
+    "sources": [
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/shock",
+      "https://nremt.org/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public"
+    ]
+  },
+  {
+    "id": "suspected-shock",
+    "title": "Collision assessment",
+    "topics": [
+      "primary",
+      "trauma"
+    ],
+    "dispatch": "Respond to an adult driver after a vehicle collision.",
+    "presentation": "A 46-year-old remains in the secured vehicle after a frontal collision. They look pale and report abdominal pain; no external bleeding is apparent.",
+    "findings": {
+      "responsiveness": "Awake but slow to answer questions.",
+      "airway": "Patent; the patient can answer verbally.",
+      "breathing": "Rapid spontaneous breathing with chest movement.",
+      "circulation": "Cool, moist skin and a rapid, weak pulse; no major external bleeding is found.",
+      "vitals": "Authored initial values: pulse 128/min; respirations 26/min; BP 88/56 mmHg. These values do not update automatically.",
+      "history": "Seat-belted driver; abdominal pain began after impact. Other history is not specified.",
+      "secondary": "Abdominal bruising and tenderness. No externally bleeding wound is found."
+    },
+    "goals": [
+      {
+        "label": "Assess responsiveness",
+        "anyOf": [
+          "responsiveness",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess airway",
+        "anyOf": [
+          "airway",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess breathing",
+        "anyOf": [
+          "breathing",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess circulation",
+        "anyOf": [
+          "circulation",
+          "primary"
+        ]
+      },
+      {
+        "label": "Arrange transport",
+        "anyOf": [
+          "transport"
+        ]
+      },
+      {
+        "label": "Reassess after care",
+        "anyOf": [
+          "reassess"
+        ],
+        "afterAny": [
+          "pressure",
+          "tourniquet",
+          "oxygen",
+          "airwaySupport",
+          "ventilation",
+          "spine",
+          "transport"
+        ]
+      },
+      {
+        "label": "Request additional resources",
+        "anyOf": [
+          "resources"
+        ]
+      }
+    ],
+    "effects": {},
+    "delay": {
+      "text": "Following the delay, the patient becomes harder to keep engaged.",
+      "setFindings": {
+        "responsiveness": "The patient is increasingly confused."
+      }
+    },
+    "review": "Internal bleeding may occur without an external wound. Assessment, transport, and reassessment remain priorities.",
+    "sources": [
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-internal",
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/shock",
+      "https://nremt.org/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public"
+    ]
+  },
+  {
+    "id": "head-injury",
+    "title": "Bicycle fall",
+    "topics": [
+      "primary",
+      "trauma"
+    ],
+    "dispatch": "Respond to an adult cyclist who struck their head.",
+    "presentation": "A 29-year-old is lying beside a bicycle. They repeatedly ask what happened. No major external hemorrhage is visible.",
+    "findings": {
+      "responsiveness": "Awake but confused; repeatedly asks the same question.",
+      "airway": "Currently patent; no visible obstruction.",
+      "breathing": "Currently spontaneous and adequate. Continue monitoring.",
+      "circulation": "A palpable pulse is present; no major external bleeding is found.",
+      "vitals": "Authored initial values: pulse 96/min; respirations 18/min; BP 126/78 mmHg. Reassess after any new findings.",
+      "history": "A witness reports a head strike. The patient cannot recall the event.",
+      "secondary": "Head abrasion and neck discomfort. The case does not establish a definitive diagnosis."
+    },
+    "goals": [
+      {
+        "label": "Assess responsiveness",
+        "anyOf": [
+          "responsiveness",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess airway",
+        "anyOf": [
+          "airway",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess breathing",
+        "anyOf": [
+          "breathing",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess circulation",
+        "anyOf": [
+          "circulation",
+          "primary"
+        ]
+      },
+      {
+        "label": "Arrange transport",
+        "anyOf": [
+          "transport"
+        ]
+      },
+      {
+        "label": "Reassess after care",
+        "anyOf": [
+          "reassess"
+        ],
+        "afterAny": [
+          "pressure",
+          "tourniquet",
+          "oxygen",
+          "airwaySupport",
+          "ventilation",
+          "spine",
+          "transport"
+        ]
+      },
+      {
+        "label": "Address potential spinal injury",
+        "anyOf": [
+          "spine"
+        ]
+      }
+    ],
+    "effects": {
+      "airwaySupport": {
+        "text": "Airway support is provided within training and protocol; the airway remains patent."
+      },
+      "ventilation": {
+        "text": "When breathing is inadequate, assisted ventilation produces visible chest rise in this authored branch.",
+        "requiresDelay": true,
+        "setFindings": {
+          "breathing": "Assisted ventilation is underway with visible chest rise; head injury remains a concern."
+        }
+      }
+    },
+    "delay": {
+      "text": "During the delay, responsiveness declines and breathing becomes slow and inadequate.",
+      "setFindings": {
+        "responsiveness": "Responds only to repeated stimulation.",
+        "breathing": "Slow, shallow respirations with inadequate chest rise."
+      },
+      "additionalGoals": [
+        {
+          "label": "Support newly inadequate breathing",
+          "anyOf": [
+            "ventilation"
+          ]
+        }
+      ]
+    },
+    "review": "Track changes in responsiveness and breathing. Supporting an immediate need does not remove the need for transport and continued care.",
+    "sources": [
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/head-neck-spinal-injury",
+      "https://nremt.org/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+      "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+    ]
+  },
+  {
+    "id": "chest-injury",
+    "title": "Chest impact",
+    "topics": [
+      "primary",
+      "trauma"
+    ],
+    "dispatch": "Respond to an adult struck in the chest by heavy equipment.",
+    "presentation": "A 41-year-old is seated against a wall. They report chest pain and can manage only short phrases. The scene has been secured.",
+    "findings": {
+      "responsiveness": "Awake, anxious, and struggling to speak full sentences.",
+      "airway": "Patent; no visible airway obstruction.",
+      "breathing": "Shallow, inadequate chest rise with reduced movement on one side.",
+      "circulation": "The pulse is rapid; skin is pale. No major external bleeding is found.",
+      "vitals": "Authored initial values: pulse 118/min; respirations 30/min; BP 104/68 mmHg. Reassess rather than assuming these remain current.",
+      "history": "Heavy equipment struck the chest shortly before arrival.",
+      "secondary": "Chest bruising and tenderness; unequal chest movement. No open chest wound is present in this case."
+    },
+    "goals": [
+      {
+        "label": "Assess responsiveness",
+        "anyOf": [
+          "responsiveness",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess airway",
+        "anyOf": [
+          "airway",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess breathing",
+        "anyOf": [
+          "breathing",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess circulation",
+        "anyOf": [
+          "circulation",
+          "primary"
+        ]
+      },
+      {
+        "label": "Arrange transport",
+        "anyOf": [
+          "transport"
+        ]
+      },
+      {
+        "label": "Reassess after care",
+        "anyOf": [
+          "reassess"
+        ],
+        "afterAny": [
+          "pressure",
+          "tourniquet",
+          "oxygen",
+          "airwaySupport",
+          "ventilation",
+          "spine",
+          "transport"
+        ]
+      },
+      {
+        "label": "Assist inadequate ventilation",
+        "anyOf": [
+          "ventilation"
+        ]
+      },
+      {
+        "label": "Request additional resources",
+        "anyOf": [
+          "resources"
+        ]
+      }
+    ],
+    "effects": {
+      "ventilation": {
+        "text": "Authored outcome with effective assisted ventilation: visible chest rise is achieved. The injury remains serious.",
+        "setFindings": {
+          "breathing": "Assisted ventilation produces visible chest rise; the chest injury still requires urgent care."
+        }
+      }
+    },
+    "delay": {
+      "text": "After the delay, the patient is more exhausted and breathing remains inadequate unless already supported.",
+      "setFindings": {
+        "responsiveness": "The patient appears more exhausted."
+      }
+    },
+    "review": "Identify inadequate breathing, provide support within protocol, and continue assessment during timely transport.",
+    "sources": [
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/chest-injury",
+      "https://nremt.org/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public",
+      "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support"
+    ]
+  },
+  {
+    "id": "fall",
+    "title": "Ladder fall",
+    "topics": [
+      "primary",
+      "trauma"
+    ],
+    "dispatch": "Respond to an adult after a fall from a ladder.",
+    "presentation": "A 52-year-old lies beside a ladder after a fall of about 10 feet. They complain loudly of ankle pain and also report neck discomfort.",
+    "findings": {
+      "responsiveness": "Alert and able to describe what happened.",
+      "airway": "Patent; speech is clear.",
+      "breathing": "Spontaneous breathing with adequate chest rise.",
+      "circulation": "A pulse is present, skin is warm, and no major external bleeding is found.",
+      "vitals": "Authored initial values: pulse 100/min; respirations 20/min; BP 132/84 mmHg. Continue reassessing.",
+      "history": "The ladder slipped. The patient reports ankle and neck pain.",
+      "secondary": "Ankle swelling, neck pain, and new tingling in both hands; avoid focusing only on the limb injury."
+    },
+    "goals": [
+      {
+        "label": "Assess responsiveness",
+        "anyOf": [
+          "responsiveness",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess airway",
+        "anyOf": [
+          "airway",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess breathing",
+        "anyOf": [
+          "breathing",
+          "primary"
+        ]
+      },
+      {
+        "label": "Assess circulation",
+        "anyOf": [
+          "circulation",
+          "primary"
+        ]
+      },
+      {
+        "label": "Arrange transport",
+        "anyOf": [
+          "transport"
+        ]
+      },
+      {
+        "label": "Reassess after care",
+        "anyOf": [
+          "reassess"
+        ],
+        "afterAny": [
+          "pressure",
+          "tourniquet",
+          "oxygen",
+          "airwaySupport",
+          "ventilation",
+          "spine",
+          "transport"
+        ]
+      },
+      {
+        "label": "Address possible spinal injury",
+        "anyOf": [
+          "spine"
+        ]
+      }
+    ],
+    "effects": {},
+    "delay": {
+      "text": "During the delay, the patient reports increasing tingling in both hands.",
+      "setFindings": {
+        "secondary": "Ankle swelling and neck pain persist; hand tingling is increasing."
+      }
+    },
+    "review": "A painful limb can distract from the primary assessment. Consider mechanism, neurologic findings, and ongoing reassessment.",
+    "sources": [
+      "https://www.redcross.org/take-a-class/resources/learn-first-aid/head-neck-spinal-injury",
+      "https://nremt.org/getmedia/4cb170ab-35fa-4ec0-a76c-634847005bc4/EMT-Test-Plan_Public"
+    ]
+  }
+]

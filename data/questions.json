@@ -1,0 +1,151 @@
+[
+  {
+    "id": "emt-001",
+    "category": "Cardiology & Resuscitation",
+    "topic": "cardiology",
+    "tags": [],
+    "question": "What compression rate is recommended for adult CPR?",
+    "choices": {
+      "A": "60–80 per minute",
+      "B": "80–100 per minute",
+      "C": "100–120 per minute",
+      "D": "140–160 per minute"
+    },
+    "correctAnswer": "C",
+    "explanation": "Adult CPR uses 100–120 compressions per minute.",
+    "source": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support",
+    "approved": true
+  },
+  {
+    "id": "emt-002",
+    "category": "Primary Assessment",
+    "topic": "primary",
+    "tags": [],
+    "question": "An adult is unresponsive and only gasping. An EMT checks for a pulse. What is the maximum check duration?",
+    "choices": {
+      "A": "5 seconds",
+      "B": "10 seconds",
+      "C": "20 seconds",
+      "D": "30 seconds"
+    },
+    "correctAnswer": "B",
+    "explanation": "Limit the pulse check to 10 seconds. If no definite pulse is felt, assume cardiac arrest.",
+    "source": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support",
+    "approved": true
+  },
+  {
+    "id": "emt-003",
+    "category": "Airway, Respiration & Ventilation",
+    "topic": "airway",
+    "tags": [],
+    "question": "During ventilation pauses in adult CPR, what visible finding helps guide the volume of each breath?",
+    "choices": {
+      "A": "Maximum chest expansion",
+      "B": "Abdominal expansion",
+      "C": "Neck vein distention",
+      "D": "Visible chest rise"
+    },
+    "correctAnswer": "D",
+    "explanation": "Give enough air for visible chest rise; avoid excessive ventilation.",
+    "source": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-basic-life-support",
+    "approved": true
+  },
+  {
+    "id": "emt-004",
+    "category": "Trauma",
+    "topic": "trauma",
+    "tags": [
+      "trauma",
+      "bleeding"
+    ],
+    "question": "With gloves on and a dressing over an external wound, how should direct pressure be applied?",
+    "choices": {
+      "A": "Firmly and steadily",
+      "B": "Lightly and intermittently",
+      "C": "Only beside the wound",
+      "D": "With frequent removal to inspect"
+    },
+    "correctAnswer": "A",
+    "explanation": "Firm, steady pressure directly over the wound helps control bleeding.",
+    "source": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "approved": false
+  },
+  {
+    "id": "emt-005",
+    "category": "Trauma",
+    "topic": "trauma",
+    "tags": [
+      "trauma",
+      "bleeding"
+    ],
+    "question": "A piece of glass is embedded in a forearm wound. Which action is appropriate?",
+    "choices": {
+      "A": "Pull it out",
+      "B": "Push it deeper",
+      "C": "Apply pressure around it and stabilize it",
+      "D": "Twist it to assess depth"
+    },
+    "correctAnswer": "C",
+    "explanation": "Leave the object in place. Removal may worsen bleeding.",
+    "source": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "approved": false,
+    "scenarioTemplate": "You and your partner assess a {age}-year-old adult {setting}. A piece of glass is embedded in the forearm. The scene is safe, PPE is in use, the patient is alert and breathing normally, and there is bleeding around the object.",
+    "scenarioApproved": false
+  },
+  {
+    "id": "emt-006",
+    "category": "Primary Assessment",
+    "topic": "primary",
+    "tags": [
+      "trauma",
+      "shock"
+    ],
+    "question": "After major blood loss, which finding suggests shock?",
+    "choices": {
+      "A": "Improved alertness",
+      "B": "A rapid, weak pulse with cool, moist skin",
+      "C": "A stronger pulse with improving skin color",
+      "D": "Slower breathing with increasing alertness"
+    },
+    "correctAnswer": "B",
+    "explanation": "A rapid, weak pulse and cool, moist skin can indicate inadequate circulation.",
+    "source": "https://www.redcross.org/take-a-class/resources/learn-first-aid/bleeding-life-threatening-external",
+    "approved": false,
+    "scenarioTemplate": "A {age}-year-old adult {setting} has lost a large amount of blood from an arm injury. Your partner is controlling the bleeding while you assess circulation.",
+    "scenarioApproved": false
+  },
+  {
+    "id": "emt-007",
+    "category": "Medical Emergencies",
+    "topic": "medical",
+    "tags": [],
+    "question": "Which finding is part of the FAST stroke screen?",
+    "choices": {
+      "A": "Ankle swelling",
+      "B": "Abdominal tenderness",
+      "C": "Itchy skin",
+      "D": "Arm weakness"
+    },
+    "correctAnswer": "D",
+    "explanation": "FAST screens for facial droop, arm weakness, and speech difficulty, and emphasizes time to act.",
+    "source": "https://cpr.heart.org/en/resuscitation-science/2024-first-aid-guidelines",
+    "approved": false
+  },
+  {
+    "id": "emt-008",
+    "category": "Medical Emergencies",
+    "topic": "medical",
+    "tags": [],
+    "question": "During a generalized convulsive seizure, which action helps prevent injury?",
+    "choices": {
+      "A": "Clear nearby hazards",
+      "B": "Restrain the limbs",
+      "C": "Place a spoon in the mouth",
+      "D": "Give water during convulsions"
+    },
+    "correctAnswer": "A",
+    "explanation": "Clear surrounding hazards. Do not restrain the person or put anything in their mouth.",
+    "source": "https://cpr.heart.org/en/resuscitation-science/2024-first-aid-guidelines",
+    "approved": false
+  }
+]
