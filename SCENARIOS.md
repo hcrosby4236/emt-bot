@@ -2,15 +2,13 @@
 
 ## Run
 
-Add your OpenAI API key to `openaiApiKey` in your local `config.json`, then run `npm start` (or restart `node index.js`). Leave your existing Discord token and guild ID in place. `config.example.json` shows the field names without secrets. Do not put the key in Discord or chat.
-
-`openaiModel` defaults to `gpt-4o-mini`. You can also set `OPENAI_API_KEY` and `OPENAI_MODEL` environment variables, which override config values. OpenAI API access/credit is required. The bot uses Node 22 or newer and built-in fetch; no new dependency is needed.
+Run `npm start` (or restart `node index.js`). Only your existing Discord token and guild ID in `config.json` are needed. No AI service, API key, or extra dependency is required. `config.example.json` shows the configuration fields without secrets.
 
 - /quiz continues to post one multiple-choice primary-assessment or trauma question.
 - /scenario starts a separate trauma situation. Choose an optional case from the autocomplete list.
 - The initiating member clicks Respond, types their next action(s), and submits the form.
 - The patient findings and care state follow the authored rules for those actions.
-- Help lists example actions. AI understands natural phrasing and typos. Finish case or "provide handoff" produces a learning-goal summary.
+- Help lists example actions. The local parser recognizes expanded wording and common typos. Finish case or "provide handoff" produces a learning-goal summary.
 
 Messages and outcomes are public. Other members cannot control someone else's case.
 
@@ -48,11 +46,25 @@ Examples:
 - reassess
 - provide handoff
 
-OpenAI interprets the response into up to three supported case actions. You do not need to match keywords. For example, "is he breathing and can I feel a pulse?" can become breathing and circulation assessments. Negated actions are not executed. Unsupported or unclear actions ask for clarification without applying partial actions. Interpretation can still be imperfect; the response displays the actions recorded.
+The local parser recognizes complete phrases, everyday questions, assessment lists, partner instructions, and a fixed list of common misspellings. Examples:
 
-The learner's written response, fictional current findings, and recent action IDs are sent to OpenAI with `store: false`. Discord IDs, tokens, and other channel messages are not included. Respond uses a Discord form, so no Message Content intent or channel-reading permission is needed. API timeouts, refusals, invalid outputs, and service errors leave the case unchanged and allow a retry.
+- "Is he awake?" or "Does she respond to voice?"
+- "Is his airway clear?" or "Look in the mouth"
+- "Is he breathing?" or "Listen to her lungs"
+- "Does she have a pulse?" or "Feel for a radial pulse"
+- "What are their vitals?" or "Check blood pressure"
+- "What happened?" or "Ask about medications"
+- "I would check his airway and breathing, then feel for a pulse"
+- "Please check airway, breathing and circulation"
+- "Ask my partner to request ALS"
+- "Hold pressure on the wound" or "Apply a pressure dressing"
+- "Apply a turniquet" (common spelling correction)
+- "Bag him", "Give oxygen via NRB", or "Hold c spine"
+- "Take him to the hospital", "Recheck the patient", or "Give report to the nurse"
 
-The integration follows the official [OpenAI structured outputs documentation](https://developers.openai.com/api/docs/guides/structured-outputs). AI interprets actions; patient outcomes and scoring still use the authored cases below.
+The parser supports specific phrases rather than arbitrary conversation. Unknown phrases, unsupported treatments, conditional plans, past actions, and negations reject the entire response without changing the case. For example, "check breathing and give aspirin" applies neither action. State actions to take now; use Help or split a rejected response into single actions. Assessment questions reveal the existing finding category, so a question about allergies returns the saved history rather than a newly generated answer.
+
+All interpretation happens locally; responses are not sent to an AI service. Respond uses a Discord form, so no Message Content intent or channel-reading permission is needed. Discord messages and outcomes remain public.
 
 ## How branches work
 
@@ -81,11 +93,11 @@ Copy one existing object, then edit:
 
 The case-name dropdown reads this file dynamically, so new cases do not need to be added to the command code.
 
-Action identifiers are listed in lib/actionParser.js. AI interpretation is in lib/aiActions.js; the old keyword parser is no longer used by scenario responses. Add general behavior in lib/scenarioEngine.js or case-specific outcomes in data/scenarios.json. Code changes require a restart.
+Action identifiers, phrase rules, and spelling corrections are in lib/actionParser.js. Add phrasing there to support more responses. Add general behavior in lib/scenarioEngine.js or case-specific outcomes in data/scenarios.json. Code changes require a restart.
 
 A case lasts up to 12 minutes or 20 successful submissions. Inactivity does not trigger medical deterioration; only the explicit wait action enters the delay branch. Sessions are separate from /quiz and reset if the bot restarts.
 
 ## Checks
 
-Run `npm test` for mocked API and Discord interaction checks, including invalid output, service errors, duplicate submissions, stale forms, and retries. These tests make no paid API calls. Live AI interpretation and a Discord server check require your key and a restart.
+Run `npm test` for phrase coverage across every action, question/list/typo parsing, rejected-input checks, and mocked Discord interactions (retry, stale forms, and ownership). Tests make no network calls. A live server check requires restarting the bot.
 

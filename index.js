@@ -43,26 +43,31 @@ for (const file of commandFiles) {
   client.commands.set(command.data.name, command);
 }
 
-// Run this once after the bot connects successfully.
+// Register commands globally so other servers can use them.
 client.once(Events.ClientReady, async (readyClient) => {
   console.log(`Logged in as ${readyClient.user.tag}`);
 
   try {
-    // Fetch the test server identified in config.json.
-    const guild = await client.guilds.fetch(guildId);
-
-    // Register each loaded slash command in that server.
-    // Creating an existing command with the same name updates it.
     for (const command of client.commands.values()) {
-      await guild.commands.create(command.data.toJSON());
+      await readyClient.application.commands.create(
+        command.data.toJSON()
+      );
     }
 
-    console.log('Commands registered.');
+    const registered = await readyClient.application.commands.fetch();
+
+  console.log('Loaded commands:', client.commands.size);
+  console.log(
+    'Commands registered with Discord:',
+    registered.map(command => command.name)
+  );
+
+    console.log('Global commands registered successfully.');
   } catch (error) {
-    // Log problems such as an incorrect server ID or missing access.
     console.error('Command registration failed:', error);
   }
 });
+
 
 // Slash commands, scenario forms, and case-name autocomplete use one router.
 client.on(Events.InteractionCreate, async (interaction) => {
